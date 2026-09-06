@@ -135,8 +135,6 @@ ChainFilmData(chain, showtimes=[Showtime, ...], ticket_url=None)
 
 ## Known issues
 
-- **Cinépolis** returns `{"d": null}` for some cities (e.g. Cali) — the endpoint reports its
-  own billboard as unavailable. Works for Bogotá and other large cities.
 - **Sequential fetching.** A large city fans out to one HTTP request per film per chain, so a
   full run can take a couple of minutes. Parallelizing `get_showtimes` is the obvious next step.
 - `merge_films` groups purely on title similarity; a very generic or heavily localized title
